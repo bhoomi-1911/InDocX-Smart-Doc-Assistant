@@ -2,7 +2,8 @@
 import streamlit as st
 import time
 import os
-
+from dotenv import load_dotenv
+load_dotenv()
 # ── Page config ───────────────────────────────────────────────────────────────
 st.set_page_config(
     page_title="InDocX · RAG Chat",
@@ -15,8 +16,11 @@ st.set_page_config(
 #  API KEY — backend only
 #  Set before running:  set INDOCX_API_KEY=your_key_here
 # =════════════════════════════════════════════════════════════════════════════
-INDOCX_API_KEY = os.environ.get("INDOCX_API_KEY", "AIzaSyBSFemy5HUFSkNy_UUqVnIyci2BLZpUjKI")
+INDOCX_API_KEY = st.secrets.get("INDOCX_API_KEY") or os.getenv("INDOCX_API_KEY")
 
+if not INDOCX_API_KEY:
+    st.error("API key not configured.")
+    st.stop()
 
 # ═════════════════════════════════════════════════════════════════════════════
 #  INTEGRATION STUBS
