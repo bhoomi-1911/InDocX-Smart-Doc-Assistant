@@ -2,10 +2,6 @@ InDocX – Smart Document Assistant
 
 InDocX is an AI-powered Smart Document Assistant built using Retrieval-Augmented Generation (RAG). It enables users to upload PDF documents and interact with them through natural language queries. The system combines semantic search using FAISS with Google Gemini models to provide accurate, context-aware responses directly from uploaded documents.
 
-Live Demo
-
-🔗 Streamlit Application: https://indocx-smart-doc-assistant-jqh4vyb9echbjq8bfu6e5l.streamlit.app/
-
 
 Features
 
@@ -45,6 +41,7 @@ Displays the document chunks used to generate answers.
 Improves transparency and explainability.
 
 System Architecture
+
 PDF Upload
      │
      ▼
